@@ -1,0 +1,113 @@
+@use './components/breakpoints' as bp;
+@use './components/mixins' as mx;
+
+@use './util/colors' as cl;
+
+.main {
+    @include mx.w-h( 100%, 100vh );
+    background: cl.$color-vr-dk-blue;
+    @include mx.d-flex( row, center, center );
+}
+
+.container {
+    @include mx.w-h( 100%, auto );
+    max-width: 350px;
+    margin: auto;
+    background: cl.$color-dk-blue;
+    padding: 2rem;
+    border-radius: 1rem;
+
+    @include bp.breakpoint( ms ) {
+        width: 80%;
+        padding: 1rem;
+    }
+
+    &--card {
+        position: absolute;
+        opacity: 0;
+        transition: all .5s ease;
+        z-index: -1;
+    }
+}
+.image {
+    margin-bottom: 2rem;
+
+    &__star {
+        border-radius: 100%;
+        padding: .8em;
+        background-color: #383d44;
+    }
+
+    &--card {
+        text-align: center;
+    }
+}
+
+.title {
+    color: cl.$color-white;
+    
+    &--card {
+        text-align: center;
+    }
+}
+
+.paragraph {
+    color: cl.$color-lh-grey;
+    line-height: 1.5em;
+}
+
+.result {
+
+    &__text {
+        color: cl.$color-orange;
+        padding: .5rem;
+        background: #383d44;
+        border-radius: 1rem;
+        text-align: center;
+    }   
+}
+
+.numbers {
+    @include mx.w-h( 100%, auto );
+    @include mx.d-flex( row, space-between, center );
+
+    &__number {
+        padding: 1em 1.3em;
+        border-radius: 100%;
+        background: #383d44;
+        cursor: pointer;
+
+        color: cl.$color-md-grey;
+
+        @include bp.breakpoint( ms ) {
+            padding: .8em 1.1em;
+        }
+
+        &--selected{
+            background: cl.$color-md-grey;
+            color: cl.$color-white;
+        }
+
+        &:hover {
+            background: cl.$color-orange;
+            color: cl.$color-white;
+        }
+    }
+}
+
+.form {
+
+    &__button {
+        @include mx.w-h( 100%, auto );
+        padding: .9em 0;
+        background: cl.$color-orange;
+        border: none;
+        outline: none;
+        margin-top: 2rem;
+        border-radius: 2rem;
+        color: cl.$color-white;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        cursor: pointer;
+    }
+}

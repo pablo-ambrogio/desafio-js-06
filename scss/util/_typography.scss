@@ -1,0 +1,19 @@
+// ## Typography
+
+// ### Body Copy
+
+// - Font size (paragraph): 15px
+
+// ### Font
+
+// - Family: [Overpass](https://fonts.google.com/specimen/Overpass)
+// - Weights: 400, 700
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+$font: 'Overpass', sans-serif;
+
+body {
+    font-family: $font;
+    font-size: 15px;
+}
